@@ -1,0 +1,108 @@
+/* Code for the "work"/"play" slider. Adapted from this great
+tutorial: https://dev.to/danielpdev/html-css-only-toggle-button-598f */
+
+/* This div will hold all of the content comprising the slider.
+It won't accept pointer events so that only the input checkbox
+element inside will accept them. */
+.work-or-play {
+    position: relative;
+    display: block;
+    width: 6.5em;
+    height: 2.5em;
+    pointer-events: none;
+}
+
+/* This is a descendant selector. Here, I'm telling CSS to
+apply this ruleset to all input elements that are descendants of
+the class="work-or-play". The input element fills all of the space
+of its container and accepts all pointer events */
+.work-or-play input {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: all;
+}
+
+/* This is the "background" part of the slider that the little
+circular widget, called a "thumb" in the tutorial I found, actually
+lives inside of. It takes up all the space of the div it's inside of,
+based on the positioning properties left/right/top/bottom all having
+a value of 0. All transitions it makes (in this case, background
+color changes) happen within 0.4s.*/
+.slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    background-color: #808080;
+    transition: 0.4s;
+    pointer-events: none;
+}
+
+/* This inserts a first child element of the slider. It corresponds to the
+"thumb" that moves to the far left and far right of the slider div. */
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 1.7em;
+    width: 1.7em;
+    left: 0.4em;
+    bottom: 0.4em;
+    background-color: #fff;
+    transition: 0.2s;
+    pointer-events: none;
+}
+
+/*This inserts a last child of the slider div. It will hold the content
+corresponding to the word "play" whenever the slider thumb is moved to
+the leftmost part of the slider div, and the word "work" whenever the
+thumb is moved to the rightmost part of the slider div. */
+.slider::after {
+    position: absolute;
+    content: "play";
+    height: 1.5em;
+    width: 1.7em;
+    right: 0.8em;
+    bottom: 0.4em;
+    transition: 0.2s;
+    pointer-events: none;
+    color: #fff;
+}
+
+/* When the input is checked, change the background color
+of the slider div to a blue-ish color. */
+input:checked + .slider {
+    background-color: #2196f3;
+}
+
+/* If the input's in a checked state, we need to 
+select the sibling element of the input, our slider thumb, and 
+translate the slider 110 px to the right */
+input:checked + .slider::before {
+    transform: translateX(3.9em);
+}
+
+/* Makes the leftmost message on the slider say, "work" when the
+thumb is at the rightmost end of the slider div, and moves it
+to an offset from the leftmost side of the slider that corresponds
+to the starting position of the "thumb". This is why when I looked
+at the position of the ::before and ::after psuedo-elements when
+the input was checked (i.e. the background was blue), the x position
+of ::after was less than that of ::before. Wow, this is neat!*/
+input:checked + .slider::after {
+    content: "work";
+    left: 0.4em
+}
+
+/* Give the overall slider div a rounded look */
+.slider.round {
+    border-radius: 4em;
+}
+
+/* Give the slider thumb a circular look*/
+.slider.round::before {
+    border-radius: 50%;
+}
+  

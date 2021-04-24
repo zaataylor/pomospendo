@@ -1,0 +1,79 @@
+h1 {
+    text-decoration: underline;
+}
+
+/* Center and stack page element column-wise */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.timer {
+    border-color: black;
+    border-width: 0.32em;
+    margin-top: 1.6em;
+    margin-bottom: 0.32em;
+}
+
+/* Hide the input element that accepts the time duration */
+.timer input {
+    opacity: 1;
+    width: 1.25em;
+    border-color: black;
+    border-radius: 10%;
+    font-size: 1.6em;
+    background-color: lightblue;
+    
+}
+
+span::before {
+    content: " ";
+}
+
+#time-input-hours {
+    font-size: 1.6em;
+    margin-left: 0.5em;
+}
+
+#time-input-minutes {
+    font-size: 1.6em;
+}
+
+#time-input-seconds {
+    font-size: 1.6em;
+}
+
+/* Start/Stop and reset buttons will be side by side*/
+.timer-buttons {
+    flex-direction: row;
+    margin-bottom: 1em;
+}
+
+button {
+    background-color: white;
+    color: black;
+    border-radius: 10%;
+    width: 4.4em;
+    height: 1.92em;
+    font-size: 1.1em;
+    border-radius: 0.4em;
+}
+
+button#reset-button {
+    background-color: whitesmoke;
+    margin-left: 0.5em;
+}
+
+.start {
+    background-color: #04f304;
+}
+
+.stop {
+    background-color: rgb(238, 27, 27);
+}
+
+#pomodoro-count {
+    font-size: 5em;
+}

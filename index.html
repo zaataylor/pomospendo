@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Pomospendo ⏰</title>
+        <link rel="stylesheet" href="styles/slider.css">
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
+    <body>
+        <script type="text/javascript" src="script.js"></script>
+        <h1>Pomospendo ⏰</h1>
+        <!-- The slider for Work/Play mode -->
+        <div class="work-or-play">
+            <input type="checkbox" id="work-or-play-mode">
+            <div class="slider round"></div>
+        </div>
+        <!-- The timer -->
+        <div class="timer">
+            <input id="time-input-hours" type="text" value="00" maxlength="2" placeholder="00" alt="Time Input: Hours"><span>h</span>
+            <input id="time-input-minutes" type="text" value="00" maxlength="2" placeholder="00" alt="Time Input: Minutes"><span>m</span>
+            <input id="time-input-seconds" type="text" value="00" maxlength="2" placeholder="00" alt="Time Input: Seconds"><span>s</span>
+        </div>
+        <!-- Timer Start/Stop and Reset buttons -->
+        <div class="timer-buttons">
+            <button class="start" id="start-stop-button">Start</button>
+            <button id="reset-button">Reset</button>
+        </div>
+        <!-- Pomodoro Counter -->
+        <div id="pomodoro-count">
+        </div>
+    </body>
+</html>
