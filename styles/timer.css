@@ -3,11 +3,13 @@ h1 {
 }
 
 /* Center and stack page element column-wise */
-body {
+.timer-components-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    min-height: 95vh;
+    min-width: 99vw;
 }
 
 .timer {
