@@ -188,6 +188,12 @@ function countdown_complete() {
 
 // Reset the timer to the default state, but don't clear the Pomodoro count
 function reset(event){
+    stop_timer()
+    TimerState.total_seconds = undefined
+
+    var start_stop_button = document.getElementById('start-stop-button')
+    stop_to_start(start_stop_button)
+
     var seconds_input = document.getElementById('time-input-seconds')
     var minutes_input = document.getElementById('time-input-minutes')
     var hours_input = document.getElementById('time-input-hours')
@@ -198,10 +204,4 @@ function reset(event){
     minutes_input.value = '00'
     hours_input.placeholder = '00'
     hours_input.value = '00'
-
-    var start_stop_button = document.getElementById('start-stop-button')
-    stop_to_start(start_stop_button)
-
-    TimerState.total_seconds = undefined
-    TimerState.timer_stopped = false
 }
