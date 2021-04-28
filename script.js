@@ -4,6 +4,9 @@ const MILLSECONDS_PER_SECOND = 1000
 
 document.addEventListener("DOMContentLoaded", setup)
 
+var alarmAudio = new Audio('alarm.mp3');
+alarmAudio.loop = true;
+
 function setup(event) {
     // Setup Local storage with Pomodoro counter
     var npc = localStorage.getItem('num-pomodoros-completed')
@@ -53,6 +56,7 @@ function stop_to_start(start_stop_button) {
     start_stop_button.innerText = "Start"
     start_stop_button.classList.remove("stop")
     start_stop_button.classList.add("start")
+    alarmAudio.pause()
 }
 
 // Changes to perform whenever a user clicks on the Start/Stop button
@@ -102,7 +106,6 @@ function start_timer() {
         // timer has counted all the way down
         if(times.length > 0 && times[times.length - 1] <= 0) {
             clearInterval(timer_id)
-            reset()
             console.log('Done!')
             countdown_complete()
         } else if(TimerState.timer_stopped) {
@@ -173,6 +176,7 @@ function stop_timer() {
 function countdown_complete() {
     // TODO: maybe add some sound effects here?
 
+    alarmAudio.play();   
     // Update Pomodoro count based on current state
     work_or_play_input = document.getElementById('work-or-play-mode')
     // If it's checked, we're working. If not, we're playing :)
