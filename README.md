@@ -23,17 +23,19 @@ There are only a few steps required to use Pomospendo:
 This is currently a fun project that I plan to use regularly once I add some more features. If you find any issues/bugs, please make an issue on this repository and describe a (hopefully) reproducible scenario in as much detail as possible. Thank you! :)
 
 # Feature Roadmap
-Below are some features I'd like to add in order to make the application better:
+Below are some features I'd like to add in order to make the application better. You can find more details [here](https://github.com/zaataylor/pomospendo/issues):
 - [ ] Add settings that enable one to switch to light/dark mode
 - [ ] Add settings to clear the Pomodoro count
-- [ ] Add sound for when the Pomodoro timer is complete and give users the ability to optionally enable this
+- [X] Add sound for when the Pomodoro timer is complete and...
+    - [ ] give users the ability to optionally enable this
 - [ ] Make Pomodoro "debt" an optional feature
 - [ ] Add a text field that one can use to describe the current Pomodoro
     - [ ] Possible Extension: Track the text fields and send a report at the end of the day (contributed by huttie on [HN](https://news.ycombinator.com/item?id=26964456))
 
 # TODOs
-Below are some important TODO items I need to complete before the application is suitable for regular use:
+Below are some important TODO items I need to complete before the application is suitable for regular use. You can find more details [here](https://github.com/zaataylor/pomospendo/issues):
 - [ ] Sanitize timer inputs to only allow digits
+- [ ] Add better explanation of the concept behind Pomospendo.
 - [ ] Learn about CSS media queries and use these to optimize the site for mobile/tablet usage
 - [ ] Improve UX for entering time duration values
 - [ ] Add an About page/sidebar
